@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 import './wheel.css';
 import Modal from 'react-bootstrap/Modal'; 
@@ -6,12 +7,22 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 export default class Wheel extends React.Component {
 
-  state = { selectedItem: null, currItems: this.props.items, modalShow: false};
+  state = { selectedItem: null, currItems: [], modalShow: false};
+  
   componentDidMount= () => {
-   
+    axios
+    .get('http://0.0.0.0:8080/')
+    .then((response) => {
+       console.log(response);
+       const currItems= response.data;
+       this.setState({currItems});
+     })
+    .catch((error)=>{
+       console.log(error);
+    });
   }
 
-   selectItem = () => {
+  selectItem = () => {
     if (this.state.selectedItem === null) {
       const selectedItem = Math.floor(Math.random() * this.state.currItems.length);
       this.setState({ selectedItem });
@@ -37,6 +48,7 @@ export default class Wheel extends React.Component {
 
   render() {
     const { selectedItem, currItems } = this.state;
+    // console.log(this.props.items);
     const wheelVars = {
       '--nb-item': currItems.length,
       '--selected-item': selectedItem,
