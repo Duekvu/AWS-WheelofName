@@ -5,7 +5,6 @@
   
   .App {
     font-family: var(--app-font);
-    text-align: center;
     background: var(--neutral-color);
     user-select: none;
   }

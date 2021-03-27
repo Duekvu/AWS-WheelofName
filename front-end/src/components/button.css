@@ -8,6 +8,9 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    position: relative;
+    top: 10px;
+    left: 30px;
   }
   
   .button1 {background-color: #4CAF50;} /* Green */

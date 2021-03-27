@@ -1,10 +1,10 @@
 :root {
     --wheel-font: 'Lato', 'Quicksand', sans-serif;
-    --wheel-size: 1000px;
-    --wheel-slice-spacing: 50px;
+    --wheel-size: 800px;
+    --wheel-slice-spacing: 1px;
     --wheel-border-size: 5px;
-    --wheel-color: black;
-    --neutral-color: white;
+    --wheel-color: pink;
+    --neutral-color: black;
     --PI: 3.14159265358979;
     --nb-item: 0;
     --item-nb: 0;
@@ -17,6 +17,8 @@
   .wheel-container {
     display: block;
     position: relative;
+    left: 160px;
+    top: 100px;
     box-sizing: content-box;
     width: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
     height: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
@@ -24,7 +26,7 @@
     margin: auto;
     background-color: var(--neutral-color);
     border: solid var(--wheel-color) 3px;
-    border-radius: 50%;
+    border-radius: 100%;
     user-select: none;
   }
   
@@ -100,7 +102,7 @@
     transform: translateY(-50%) rotate(calc(var(--item-nb) * (360deg / var(--nb-item, 1))));
   
     /* texte */
-    color: var(--neutral-color);
+    color: black;
     text-align: right;
     padding: 0 25px 0 50px;
     font-family: var(--wheel-font);
