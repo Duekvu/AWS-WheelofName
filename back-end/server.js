@@ -9,7 +9,10 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header('Access-Control-Allow-Methods', 'DELETE, PUT');
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.json(["dasdjakshdas","asdkasldhjas","aklsdjlaoqiwed","aklsjdoqwielk12"]);
 });
 
 app.listen(PORT, HOST);
